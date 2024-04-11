@@ -1,2 +1,2 @@
 export { DonutChart } from "Components";
-export type { DonutProps } from "Types";
+export type { DonutProps, ChartDatum } from "Types";

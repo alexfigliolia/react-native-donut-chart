@@ -15,17 +15,22 @@ import { Styles } from "./Styles";
  * donuts using React Native
  *
  * ```tsx
- * <DonutChart
+ *  <DonutChart
+ *    delay={0}
+ *    duration={1500}
  *    strokeWidth={12}
- *    data={[
- *      { label: "rent", value: 2000, stroke: "rgb(228, 69, 69)", },
- *      { label: "electric", value: 300, stroke: "rgb(247, 140, 69)" },
- *      { label: "garbage", value: 100, stroke: "rgb(35, 220, 174)" },
- *      { label: "cleaning", value: 400, stroke: "rgb(32, 187, 230)" },
- *    ]}
+ *    strokeLinecap="round"
+ *    style={Styles.yourContrainerStyles}
+ *    data={[{
+ *      label: "rent",
+ *      value: 2000,
+ *      stroke: "rgb(228, 69, 69)",
+ *      style: Styles.yourSVGStyles // such as shadow and stuff
+ *    }]}
+ *    easing={Easing.out(Easing.exp)}
  *    onMeasure={(dimensions: number) => {}}>
  *    {children}
- * </DonutChart>
+ *  </DonutChart>
  * ```
  */
 export const DonutChart = memo(function DonutChart({
