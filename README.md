@@ -1,5 +1,5 @@
-# React Native Counter Animation
-A number animation library for adding some flair to your data
+# React Native Donut Chart
+A React Native library for creating responsive donut charts that animate when data changes
 
 ![Screenshot](media/donut.gif)
 
