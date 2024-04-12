@@ -11,6 +11,12 @@ npm i -S @figliolia/rn-donut-chart react-native-svg
 yarn add @figliolia/rn-donut-chart react-native-svg 
 ```
 
+If you did not already have `react-native-svg` installed, go ahead and link the native libraries:
+
+```bash
+cd ios && pod install
+```
+
 ## Usage 
 ```tsx
 <DonutChart
