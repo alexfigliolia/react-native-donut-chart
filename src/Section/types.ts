@@ -1,10 +1,10 @@
+import type { ReactNode } from "react";
 import type { EasingFunction, StyleProp, ViewStyle } from "react-native";
 import type { Linecap } from "react-native-svg";
-import type { Interpolation } from "Controllers";
-import type { RenderPhase } from "./Donut";
-import type { OptionalChildren } from "./React";
+import type { RenderPhase } from "../types";
+import type { Interpolation } from "./Interpolation";
 
-export interface SectionProps extends OptionalChildren {
+export interface SectionProps {
   size: number;
   gap: number;
   value: number;
@@ -15,6 +15,7 @@ export interface SectionProps extends OptionalChildren {
   duration: number;
   rotation: number;
   strokeWidth: number;
+  children?: ReactNode;
   circumference: number;
   strokeLinecap: Linecap;
   easing: EasingFunction;

@@ -1,6 +1,6 @@
-import type { ChartDatum, RenderPhase } from "Types/Donut";
+import type { ChartDatum, RenderPhase } from "./types";
 
-export class DonutController {
+export class Controller {
   total: number;
   angles: number[];
   data: ChartDatum[];

@@ -1,7 +1,8 @@
-import type { RenderPhase, SectionProps } from "Types";
+import type { RenderPhase } from "../types";
 import { Interpolation } from "./Interpolation";
+import type { SectionProps } from "./types";
 
-export class SectionController {
+export class Controller {
   public static readonly opacityInterpolation = new Interpolation(0, 1);
 
   public static stateFrom(props: SectionProps) {

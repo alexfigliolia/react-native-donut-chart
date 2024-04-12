@@ -1,6 +1,6 @@
+import type { ReactNode } from "react";
 import type { EasingFunction, StyleProp, ViewStyle } from "react-native";
 import type { Linecap } from "react-native-svg";
-import type { OptionalChildren } from "./React";
 
 export interface ChartDatum {
   label: string;
@@ -11,10 +11,11 @@ export interface ChartDatum {
 
 export type RenderPhase = "INITIAL" | "UPDATE";
 
-export interface DonutProps extends OptionalChildren {
+export interface DonutProps {
   delay?: number;
   duration?: number;
   data: ChartDatum[];
+  children?: ReactNode;
   strokeWidth?: number;
   easing?: EasingFunction;
   strokeLinecap?: Linecap;

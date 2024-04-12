@@ -2,20 +2,8 @@
   "name": "@figliolia/rn-donut-chart",
   "version": "1.0.0",
   "description": "An animated donut/pie chart library",
-  "exports": {
-    ".": {
-      "import": "./dist/mjs/index.js",
-      "require": "./dist/cjs/index.js",
-      "types": "./dist/types/index.d.ts"
-    }
-  },
-  "main": "dist/cjs/index.js",
-  "module": "dist/mjs/index.js",
-  "types": "dist/types/index.d.ts",
-  "files": [
-    "dist",
-    "src/*"
-  ],
+  "main": "./src/index.ts",
+  "module": "./src/index.js",
   "author": "Alex Figliolia",
   "license": "MIT",
   "homepage": "https://github.com/alexfigliolia/react-native-donut-chart#readme",
@@ -29,7 +17,6 @@
     "animation"
   ],
   "scripts": {
-    "build": "npx ts-packager -e src",
     "start": "tsx devtools/dev-server/CLI.ts",
     "lint": "tsx ci/commands/Lint.ts",
     "test": "tsx ci/commands/Test.ts"
@@ -42,7 +29,6 @@
   },
   "devDependencies": {
     "@figliolia/child-process": "^1.0.3",
-    "@figliolia/ts-packager": "^1.0.3",
     "@types/node": "^16.7.13",
     "@types/react": "^18.2.75",
     "@types/react-native": "^0.73.0",

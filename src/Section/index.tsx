@@ -1,9 +1,9 @@
 import { Component } from "react";
 import { Animated } from "react-native";
 import { Circle, Svg } from "react-native-svg";
-import { SectionController } from "Controllers";
-import type { SectionProps, SectionState } from "Types";
+import { Controller } from "./Controller";
 import { Styles } from "./Styles";
+import type { SectionProps, SectionState } from "./types";
 
 const AnimatedSVG = Animated.createAnimatedComponent(Svg);
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
@@ -12,7 +12,7 @@ export class Section extends Component<SectionProps, SectionState> {
   private draw = new Animated.Value(0);
   private rotate = new Animated.Value(0);
   private opacity = new Animated.Value(0);
-  public state: SectionState = SectionController.stateFrom(this.props);
+  public state: SectionState = Controller.stateFrom(this.props);
 
   public override componentDidMount() {
     this.animate();
@@ -27,7 +27,6 @@ export class Section extends Component<SectionProps, SectionState> {
     }
     if (nextProps.value !== this.props.value) {
       this.incrementInterpolations(nextProps);
-      return false;
     }
     return false;
   }
@@ -71,9 +70,7 @@ export class Section extends Component<SectionProps, SectionState> {
 
   private incrementInterpolations(props: SectionProps) {
     const { drawInterpolation, rotateInterpolation } = this.state;
-    const nextDraw = drawInterpolation.add(
-      SectionController.strokeDashoffset(props),
-    );
+    const nextDraw = drawInterpolation.add(Controller.strokeDashoffset(props));
     const nextRotation = rotateInterpolation.add(`${props.rotation || 0}deg`);
     this.setState(
       {
@@ -140,9 +137,7 @@ export class Section extends Component<SectionProps, SectionState> {
           strokeWidth={strokeWidth}
           strokeLinecap={strokeLinecap}
           strokeDasharray={circumference}
-          opacity={this.opacity.interpolate(
-            SectionController.opacityInterpolation,
-          )}
+          opacity={this.opacity.interpolate(Controller.opacityInterpolation)}
           strokeDashoffset={this.draw.interpolate(drawInterpolation)}
         />
         {children}

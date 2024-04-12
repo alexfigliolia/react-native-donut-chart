@@ -1,12 +1,12 @@
 import { memo, useCallback, useMemo, useState } from "react";
 import type { LayoutChangeEvent } from "react-native";
 import { Easing, View } from "react-native";
-import { Gradient } from "Components/Gradient";
-import { Section } from "Components/Section";
-import { DonutController } from "Controllers";
-import { useController } from "Hooks";
-import type { DonutProps } from "Types/Donut";
+import { Controller } from "./Controller";
+import { Gradient } from "./Gradient";
+import { Section } from "./Section";
 import { Styles } from "./Styles";
+import type { DonutProps } from "./types";
+import { useController } from "./useController";
 
 /**
  * ### Donut Chart
@@ -53,7 +53,7 @@ export const DonutChart = memo(function DonutChart({
   const center = useMemo(() => width / 2, [width]);
   const radius = useMemo(() => (width - strokeWidth) / 2, [width, strokeWidth]);
   const circumference = useMemo(() => 2 * Math.PI * radius, [radius]);
-  const controller = useController(new DonutController(data));
+  const controller = useController(new Controller(data));
   controller.update(data);
 
   const onLayout = useCallback(
@@ -91,9 +91,9 @@ export const DonutChart = memo(function DonutChart({
                 rotation={controller.angles[i]}
                 value={controller.percentages[i]}
                 renderPhase={controller.renderPhase}
-                stroke={DonutController.parseStroke(label, stroke)}
+                stroke={Controller.parseStroke(label, stroke)}
               >
-                {DonutController.renderGradient(stroke) && (
+                {Controller.renderGradient(stroke) && (
                   <Gradient label={label} colors={stroke} />
                 )}
               </Section>

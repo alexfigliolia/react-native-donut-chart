@@ -1,9 +1,7 @@
 {
 	"ts-node": {
-		// these options are overrides used only by ts-node
-		// same as the --compilerOptions flag and the TS_NODE_COMPILER_OPTIONS environment variable
 		"compilerOptions": {
-			"module": "commonjs"
+			"module": "CommonJS"
 		}
 	},
 	"compilerOptions": {
@@ -25,19 +23,7 @@
 		"moduleResolution": "node",
 		"resolveJsonModule": true,
 		"isolatedModules": true,
-		"noEmit": true,
-		"baseUrl": "./src",
-		"paths": {
-			"Components/*": [
-				"./Components/*"
-			],
-			"Hooks/*": [
-				"./Hooks/*"
-			],
-			"Types/*": [
-				"./Types/*"
-			],
-		}
+		"noEmit": true
 	},
 	"include": [
 		"ci",
