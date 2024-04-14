@@ -831,10 +831,23 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.40.0.tgz#3ba73359e11f5a7bd3e407f70b3528abfae69cec"
   integrity sha512-ElyB54bJIhXQYVKjDSvCkPO1iU1tSAeVQJbllWJq1XQSmmA4dgFk8CbiBGpiOPxleE48vDogxCtmMYku4HSVLA==
 
+"@figliolia/child-process@^1.0.1":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@figliolia/child-process/-/child-process-1.0.4.tgz#5337c847f43a08ff9e1124793fa650f746515da5"
+  integrity sha512-midiGoIu0pO9q+T607iYFSsEFSg6XlWJ7REaGcX/mCuxgrr8hudGSPz4OzyXznVUlp1UwaVTjfgYHlSUxuaJXg==
+
 "@figliolia/child-process@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@figliolia/child-process/-/child-process-1.0.3.tgz#38fd4b913524f6219eea586d169b786e5e331e9e"
   integrity sha512-GZwsbqWPYxvbd3X5CPx++kmy5JsTYXp+ovtvoJZMraaY0/hBLi4ZGiVACNNfujBJCEYsyroxrY20ylYUC2snnw==
+
+"@figliolia/ts-packager@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@figliolia/ts-packager/-/ts-packager-1.0.9.tgz#007a993de3b795af49bfd1c54e3b28e3d5fbdc44"
+  integrity sha512-OyV9AJ8ljzXBvR9nnJdDzZU319GRDOPYXKrNQMmHj3r+g5RQvoNyWouu4qZ9+XjPJZTdDDL29pqRlp1xqaioLw==
+  dependencies:
+    "@figliolia/child-process" "^1.0.1"
+    chalk "^4.1.2"
 
 "@hapi/hoek@^9.0.0", "@hapi/hoek@^9.3.0":
   version "9.3.0"

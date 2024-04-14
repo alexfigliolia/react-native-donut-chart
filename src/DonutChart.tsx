@@ -44,8 +44,7 @@ export const DonutChart = memo(function DonutChart({
   strokeLinecap = "round",
   easing = Easing.inOut(Easing.exp),
 }: DonutProps) {
-  const [width, setWidth] = useState(strokeWidth);
-  const [renderSections, render] = useState(false);
+  const [width, setWidth] = useState(0);
   const gap = useMemo(
     () => (data.length < 2 ? 0 : strokeWidth * 2),
     [strokeWidth, data.length],
@@ -61,7 +60,6 @@ export const DonutChart = memo(function DonutChart({
       const { width } = e.nativeEvent.layout;
       setWidth(width);
       onMeasure?.(width);
-      render(true);
     },
     [onMeasure],
   );
@@ -72,7 +70,7 @@ export const DonutChart = memo(function DonutChart({
       style={[Styles.container, style, { height: width }]}
     >
       <View style={Styles.inner}>
-        {renderSections &&
+        {width !== 0 &&
           controller.data.map(({ label, style, stroke = "#000" }, i) => {
             return (
               <Section

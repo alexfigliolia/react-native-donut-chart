@@ -18,17 +18,12 @@ export class Section extends Component<SectionProps, SectionState> {
     this.animate();
   }
 
-  public override shouldComponentUpdate(
-    nextProps: Readonly<SectionProps>,
-    nextState: Readonly<SectionState>,
-  ) {
-    if (nextState !== this.state) {
-      return true;
-    }
+  public override shouldComponentUpdate(nextProps: SectionProps) {
     if (nextProps.value !== this.props.value) {
       this.incrementInterpolations(nextProps);
+      return false;
     }
-    return false;
+    return true;
   }
 
   private animate() {
@@ -137,8 +132,8 @@ export class Section extends Component<SectionProps, SectionState> {
           strokeWidth={strokeWidth}
           strokeLinecap={strokeLinecap}
           strokeDasharray={circumference}
-          opacity={this.opacity.interpolate(Controller.opacityInterpolation)}
           strokeDashoffset={this.draw.interpolate(drawInterpolation)}
+          opacity={this.opacity.interpolate(Controller.opacityInterpolation)}
         />
         {children}
       </AnimatedSVG>
