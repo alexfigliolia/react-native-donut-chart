@@ -1,6 +1,6 @@
 {
   "name": "@figliolia/rn-donut-chart",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An animated donut/pie chart library",
   "main": "dist/cjs/index.js",
   "module": "dist/mjs/index.js",
@@ -11,10 +11,16 @@
     "type": "git",
     "url": "git+https://github.com/alexfigliolia/react-native-donut-chart.git"
   },
+  "files": [
+    "src",
+    "dist",
+    "media"
+  ],
   "keywords": [
     "react-native",
     "react",
-    "animation"
+    "animation",
+    "donut-chart"
   ],
   "scripts": {
     "build": "npx ts-packager -e src",
